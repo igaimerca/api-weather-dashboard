@@ -107,20 +107,6 @@ docker run -d --name weather-app --restart unless-stopped \
   igaimerca/weather-dashboard:v1
 ```
 
-### Configure Load Balancer (Lb01)
-Update `/etc/haproxy/haproxy.cfg`:
-```haproxy
-backend webapps
-    balance roundrobin
-    server web01 172.20.0.11:8080 check
-    server web02 172.20.0.12:8080 check
-```
-
-Reload HAProxy:
-```bash
-docker exec -it lb-01 sh -c 'haproxy -sf $(pidof haproxy) -f /etc/haproxy/haproxy.cfg'
-```
-
 ## API Endpoints
 
 - `GET /api/weather/:city` - Current weather for a city
