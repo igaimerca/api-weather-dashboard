@@ -1,12 +1,11 @@
 # Weather Intelligence Dashboard
 
-A comprehensive weather intelligence application that provides real-time weather data, air quality monitoring, weather forecasts, and related news for East African cities. Built with Node.js, Express, and modern web technologies.
+A comprehensive weather intelligence application that provides real-time weather data, air quality monitoring, weather forecasts, and related news for East African cities. Built with Node.js, Express, HTML and CSS.
 
-## Live Demo & Resources
+## Demo & Resources
 
-- **Live Application**: http://f27da88f9667.306e92cf.alu-cod.online
 - **Docker Image**: [igaimerca/weather-dashboard](https://hub.docker.com/r/igaimerca/weather-dashboard)
-- **Demo Video**: [Watch Demo Video](https://youtu.be/your-video-id-here)
+- **Demo Video**: [Watch Demo Video](https://vimeo.com/1106268380)
 - **GitHub Repository**: [https://github.com/igaimerca/api-weather-dashboard](https://github.com/igaimerca/api-weather-dashboard)
 
 ## Features
