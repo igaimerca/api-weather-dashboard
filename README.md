@@ -1,6 +1,13 @@
 # Weather Intelligence Dashboard
 
-A comprehensive weather intelligence application that provides real-time weather data, air quality monitoring, weather forecasts, and related news. Built with Node.js, Express, and modern web technologies.
+A comprehensive weather intelligence application that provides real-time weather data, air quality monitoring, weather forecasts, and related news for East African cities. Built with Node.js, Express, and modern web technologies.
+
+## Live Demo & Resources
+
+- **Live Application**: http://f27da88f9667.306e92cf.alu-cod.online
+- **Docker Image**: [igaimerca/weather-dashboard](https://hub.docker.com/r/igaimerca/weather-dashboard)
+- **Demo Video**: [Watch Demo Video](https://youtu.be/your-video-id-here)
+- **GitHub Repository**: [https://github.com/igaimerca/api-weather-dashboard](https://github.com/igaimerca/api-weather-dashboard)
 
 ## Features
 
@@ -86,6 +93,8 @@ docker login
 docker push igaimerca/weather-dashboard:v1
 ```
 
+**Docker Hub Repository**: https://hub.docker.com/r/igaimerca/weather-dashboard
+
 ## Production Deployment
 
 ### Deploy on Web01 and Web02
@@ -94,8 +103,8 @@ docker push igaimerca/weather-dashboard:v1
 docker pull igaimerca/weather-dashboard:v1
 docker run -d --name weather-app --restart unless-stopped \
   -p 8080:8080 \
-  -e OPENWEATHER_API_KEY=your_key \
-  -e NEWS_API_KEY=your_key \
+  -e OPENWEATHER_API_KEY=key \
+  -e NEWS_API_KEY=key \
   igaimerca/weather-dashboard:v1
 ```
 
