@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Intelligence Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Weather Intelligence Dashboard</h1>
+            <p class="subtitle">Comprehensive weather data, air quality monitoring, and news updates</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input type="text" id="cityInput" placeholder="Enter city name (e.g., Kigali, Bujumbura, Kampala)" class="search-input">
+                <button id="searchBtn" class="search-btn">Get Weather Intelligence</button>
+            </div>
+            <div class="quick-cities">
+                <button class="quick-city" data-city="Kigali">Kigali</button>
+                <button class="quick-city" data-city="Bujumbura">Bujumbura</button>
+                <button class="quick-city" data-city="Kampala">Kampala</button>
+                <button class="quick-city" data-city="Nairobi">Nairobi</button>
+                <button class="quick-city" data-city="Dar es Salaam">Dar es Salaam</button>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Loading weather intelligence data...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <div id="dashboardContent" class="dashboard-content hidden">
+            <div class="data-controls">
+                <div class="filter-controls">
+                    <select id="sortOptions" class="control-select">
+                        <option value="">Sort by...</option>
+                        <option value="temperature">Temperature</option>
+                        <option value="humidity">Humidity</option>
+                        <option value="wind">Wind Speed</option>
+                        <option value="time">Time</option>
+                    </select>
+                    <input type="text" id="searchData" placeholder="Search in data..." class="control-input">
+                </div>
+                <div class="view-controls">
+                    <button id="refreshBtn" class="control-btn">Refresh Data</button>
+                    <button id="exportBtn" class="control-btn">Export Data</button>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="weather-card card">
+                    <h2 class="card-title">Current Weather</h2>
+                    <div id="currentWeather" class="weather-content">
+                        <div class="weather-main">
+                            <div class="temperature-display">
+                                <span id="currentTemp" class="temperature">--</span>
+                                <span class="unit">°C</span>
+                            </div>
+                            <div class="weather-info">
+                                <div id="weatherCondition" class="condition">--</div>
+                                <div id="weatherDescription" class="description">--</div>
+                                <div id="feelsLike" class="feels-like">Feels like --°C</div>
+                            </div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Humidity</span>
+                                <span id="humidity" class="detail-value">--%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Wind</span>
+                                <span id="windSpeed" class="detail-value">-- km/h</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Pressure</span>
+                                <span id="pressure" class="detail-value">-- hPa</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">UV Index</span>
+                                <span id="uvIndex" class="detail-value">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="air-quality-card card">
+                    <h2 class="card-title">Air Quality</h2>
+                    <div id="airQuality" class="air-quality-content">
+                        <div class="aqi-display">
+                            <div id="aqiValue" class="aqi-value">--</div>
+                            <div id="aqiLevel" class="aqi-level">--</div>
+                            <div id="aqiDescription" class="aqi-description">--</div>
+                        </div>
+                        <div id="pollutants" class="pollutants-grid">
+                            <!-- Pollutant data will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forecast-card card">
+                    <h2 class="card-title">24-Hour Forecast</h2>
+                    <div id="forecast" class="forecast-content">
+                        <div id="forecastItems" class="forecast-items">
+                            <!-- Forecast items will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card card">
+                    <h2 class="card-title">Weather News</h2>
+                    <div id="weatherNews" class="news-content">
+                        <div id="newsItems" class="news-items">
+                            <!-- News items will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Weather Intelligence Dashboard by Aime Igirimpuhwe | 
+           Data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> & 
+           <a href="https://newsapi.org/" target="_blank">NewsAPI</a></p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
